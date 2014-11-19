@@ -93,4 +93,6 @@ echo "Ingrese a la direccion: 'localhost:3000'"
 echo "El usuario por defecto es: admin@david.com"
 echo "Y la contraseña es: 12345678"
 echo "====== Gracias por usar Gesco ======"
-
+echo "====== ======"
+echo "====== Autores: Luis Felipe Mendivelso y Gabriel Jaime Lopez ======"
+echo "====== ======"
