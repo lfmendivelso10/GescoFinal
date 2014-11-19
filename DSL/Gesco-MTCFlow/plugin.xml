@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Requerimentos -->
+      <package
+            uri="http://co.edu.uniandes.david.mono.gesco.requerimientos"
+            class="Gesco.GescoPackage"
+            genModel="metamodels/Requerimentos.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Linux -->
+      <package
+            uri="co.edu.uniandes.mono.gesco.linux"
+            class="Linux.LinuxPackage"
+            genModel="metamodels/Linux.genmodel"/>
+   </extension>
+
+</plugin>

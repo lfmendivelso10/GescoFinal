@@ -1,0 +1,62 @@
+Configuracion
+{
+	"Linux"
+	{
+		version "1.0.0"
+		descripcion "El presente Shell Script está diseñado para establecer la configuración base para el uso de CMS MONO, construido por la Universidad de los Andes con financiamiento de Colciencias, como apoyo a la Insdustria Colombiana de Desarrollo de Contenidos Digitales. 2014"
+		arquitectura x64
+		fuentes{
+			Fuente = Java ,autor: "Oracle" , fuente: "ppa:webupd8team/java" , tipoFuente: "ppa" ;
+			Fuente = "ffmpeg.repo" ,autor: "jon-severinsson" , fuente: "ppa:jon-severinsson/ffmpeg" , tipoFuente: "ppa" ;
+			Fuente = "node.js" ,autor: "chris-lea" , fuente: "ppa:chris-lea/node.js" , tipoFuente: "ppa" ;
+			Fuente = "rabbitmq-source", autor: "RabbitMQ", fuente: "deb http://www.rabbitmq.com/debian/ testing main", tipoFuente: "apt-source";
+			Fuente = "rabbitmq-key-file", autor: "RabbitMQ", fuente: "http://www.rabbitmq.com/rabbitmq-signing-key-public.asc", tipoFuente: "wget";
+			Fuente = "rabbitmq-key-installer", autor: "RabbitMQ", fuente: "rabbitmq-signing-key-public.asc", tipoFuente: "apt-key";
+			Fuente = "RVM.repo", autor: "RVM.io", fuente: "https://get.rvm.io", tipoFuente: "curl";
+		}
+		requerimientos{
+			Software = "lamp-server^",descripcion:"LAMP server - Linux, Apache, MySQL and PHP", arquitectura: x64;
+			Software = "oracle-jdk7-installer",descripcion:"Oracle Java Development Kit versión 7", arquitectura: x64 , origen: (Java); 
+			Software = "oracle-java7-set-default",descripcion:"Oracle Java Development Kit versión 7", arquitectura: x64 , origen: (Java);
+			Software = imagemagick,descripcion:"Suite de funciones bitmaps por consola", arquitectura: x64;
+			Software = ffmpeg ,descripcion: "Colección de librerias para gestión de archivos de audio y video", arquitectura: x64;
+			Software = "libimage-exiftool-perl", descripcion: "Libreria para gestión de metadata",arquitectura: x64;
+			Software = "perl-doc" , descripcion: "Administración de archivos desde Perl",arquitectura: x64;
+			Software = dcraw, descripcion: "", arquitectura: x64;
+			Software = gpac, descripcion: "",arquitectura: x64;
+			Software = "git-core", descripcion: "Núcleo para gestión de repositorios GIT", arquitectura: x64;
+			Software = "zlib1g-dev", descripcion: "", arquitectura: x64;
+			Software = "build-essential", descripcion: "Suite de librerias para modificación de kernel",arquitectura: x64;
+			Software = "libssl-dev", descripcion: "Librerias para aplicación de SSL", arquitectura: x64;
+			Software = "libreadline-dev", descripcion: "",arquitectura: x64;
+			Software = "libyaml-dev", descripcion: "",arquitectura: x64;
+			Software = "libsqlite3-dev", descripcion: "Librerias para administración y uso de Sqlite3(DBMS)",arquitectura: x64;
+			Software = "sqlite3", descripcion: "Sqlite 3 DBMS",arquitectura: x64;
+			Software = "libxml2-dev", descripcion: "Colección de librerias para la gestión de archivo XML", arquitectura: x64;
+			Software = "libxslt1-dev", descripcion: "", arquitectura: x64;
+			Software = "python-software-properties", descripcion: "Administración de archivos y fuentes Python", arquitectura: x64;
+			Software = nodejs, descripcion: "",arquitectura: x64;
+			Software = "mysql-client", descripcion: "Cliente de conexión a base de datos MySQL",arquitectura: x64;
+			Software = "libmysqlclient-dev", descripcion: "Librerias de conexión a base de datos MySQL",arquitectura: x64;
+			Software = tomcat7, descripcion: "Contenedor de Sevlets. Versión 7",arquitectura:x64;
+			Software = "rabbitmq-server", descripcion: "Servidor de colas de mensajes",arquitectura: x64;
+			Software = ruby, version: "1.9.3-p547", descripcion: "Entorno Ruby", arquitectura: x64, origen:("RVM.repo");
+			Software = rails, version: "3.2.8", descripcion: "Framework para aplicaciones web en Ruby. Ruby on Rails", arquitectura: x64, origen:("RVM.repo");
+			Software = bundler, descripcion: "Gestor de dependencia en Ruby on Rails", arquitectura: x64, origen:("RVM.repo");
+		}
+	},
+	"Windows"
+	{
+		version "1.0.0"
+		descripcion "El presente Shell Script está diseñado para establecer la configuración base para el uso de CMS MONO, 
+                     construido por la Universidad de los Andes con financiamiento de Colciencias, como apoyo a la
+                     Insdustria Colombiana de Desarrollo de Contenidos Digitales. 2014"
+		arquitectura x64
+		fuentes{
+			Fuente = JDK ,autor: "Oracle" , fuente: "http://download.oracle.com/otn-pub/java/jdk/7u71-b14/jdk-7u71-windows-x64.exe" , tipoFuente: "wget" ;
+		}
+		requerimientos{
+			Software = "jdk",descripcion:"Java SE Development Kit version 7", arquitectura: x64,origen: (JDK);
+		}
+	}
+}

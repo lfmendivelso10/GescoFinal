@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/GescoMTC/src" modelPluginID="GescoMTC" modelName="Linux"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>Linux.ecore</foreignModel>
+  <genPackages prefix="Linux" disposableProviderFactory="true" ecorePackage="Linux.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Linux.ecore#//Arquitectura">
+      <genEnumLiterals ecoreEnumLiteral="Linux.ecore#//Arquitectura/x32"/>
+      <genEnumLiterals ecoreEnumLiteral="Linux.ecore#//Arquitectura/x64"/>
+    </genEnums>
+    <genClasses ecoreClass="Linux.ecore#//Script">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Linux.ecore#//Script/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Linux.ecore#//Script/descripcion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Linux.ecore#//Script/arquitectura"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Linux.ecore#//Script/repositorios"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Linux.ecore#//Script/aplicaciones"/>
+    </genClasses>
+    <genClasses ecoreClass="Linux.ecore#//LineaComando">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Linux.ecore#//LineaComando/parametros"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Linux.ecore#//LineaComando/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Linux.ecore#//LineaComando/descripcion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Linux.ecore#//LineaComando/rutaDestino"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Linux.ecore#//LineaComando/gestor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Linux.ecore#//LineaComando/aplicacion"/>
+    </genClasses>
+    <genClasses ecoreClass="Linux.ecore#//Parametro">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Linux.ecore#//Parametro/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Linux.ecore#//Parametro/valor"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

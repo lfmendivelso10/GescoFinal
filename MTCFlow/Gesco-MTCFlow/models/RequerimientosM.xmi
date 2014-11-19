@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Gesco:Configuracion
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:Gesco="http://co.edu.uniandes.david.mono.gesco.requerimientos">
+  <sistemaOperativo
+      name="Linux"
+      version="1.0.0"
+      descripcion="El presente Shell Script est&#xe1; dise&#xf1;ado para establecer la configuraci&#xf3;n base para el uso de CMS MONO, construido por la Universidad de los Andes con financiamiento de Colciencias, como apoyo a la Insdustria Colombiana de Desarrollo de Contenidos Digitales. 2014">
+    <fuentes
+        name="Java"
+        autor="Oracle"
+        fuente="ppa:webupd8team/java"
+        tipoFuente="ppa"/>
+    <fuentes
+        name="ffmpeg.repo"
+        autor="jon-severinsson"
+        fuente="ppa:jon-severinsson/ffmpeg"
+        tipoFuente="ppa"/>
+    <fuentes
+        name="node.js"
+        autor="chris-lea"
+        fuente="ppa:chris-lea/node.js"
+        tipoFuente="ppa"/>
+    <fuentes
+        name="rabbitmq-source"
+        autor="RabbitMQ"
+        fuente="deb http://www.rabbitmq.com/debian/ testing main"
+        tipoFuente="apt-source"/>
+    <fuentes
+        name="rabbitmq-key-file"
+        autor="RabbitMQ"
+        fuente="http://www.rabbitmq.com/rabbitmq-signing-key-public.asc"
+        tipoFuente="wget"/>
+    <fuentes
+        name="rabbitmq-key-installer"
+        autor="RabbitMQ"
+        fuente="rabbitmq-signing-key-public.asc"
+        tipoFuente="apt-key"/>
+    <fuentes
+        name="RVM.repo"
+        autor="RVM.io"
+        fuente="https://get.rvm.io"
+        tipoFuente="curl"/>
+    <requerimientos
+        name="lamp-server^"
+        descripcion="LAMP server - Linux, Apache, MySQL and PHP"/>
+    <requerimientos
+        name="oracle-jdk7-installer"
+        descripcion="Oracle Java Development Kit versi&#xf3;n 7"
+        origen="Java"/>
+    <requerimientos
+        name="oracle-java7-set-default"
+        descripcion="Oracle Java Development Kit versi&#xf3;n 7"
+        origen="Java"/>
+    <requerimientos
+        name="imagemagick"
+        descripcion="Suite de funciones bitmaps por consola"/>
+    <requerimientos
+        name="ffmpeg"
+        descripcion="Colecci&#xf3;n de librerias para gesti&#xf3;n de archivos de audio y video"/>
+    <requerimientos
+        name="libimage-exiftool-perl"
+        descripcion="Libreria para gesti&#xf3;n de metadata"/>
+    <requerimientos
+        name="perl-doc"
+        descripcion="Administraci&#xf3;n de archivos desde Perl"/>
+    <requerimientos
+        name="dcraw"
+        descripcion=""/>
+    <requerimientos
+        name="gpac"
+        descripcion=""/>
+    <requerimientos
+        name="git-core"
+        descripcion="N&#xfa;cleo para gesti&#xf3;n de repositorios GIT"/>
+    <requerimientos
+        name="zlib1g-dev"
+        descripcion=""/>
+    <requerimientos
+        name="build-essential"
+        descripcion="Suite de librerias para modificaci&#xf3;n de kernel"/>
+    <requerimientos
+        name="libssl-dev"
+        descripcion="Librerias para aplicaci&#xf3;n de SSL"/>
+    <requerimientos
+        name="libreadline-dev"
+        descripcion=""/>
+    <requerimientos
+        name="libyaml-dev"
+        descripcion=""/>
+    <requerimientos
+        name="libsqlite3-dev"
+        descripcion="Librerias para administraci&#xf3;n y uso de Sqlite3(DBMS)"/>
+    <requerimientos
+        name="sqlite3"
+        descripcion="Sqlite 3 DBMS"/>
+    <requerimientos
+        name="libxml2-dev"
+        descripcion="Colecci&#xf3;n de librerias para la gesti&#xf3;n de archivo XML"/>
+    <requerimientos
+        name="libxslt1-dev"
+        descripcion=""/>
+    <requerimientos
+        name="python-software-properties"
+        descripcion="Administraci&#xf3;n de archivos y fuentes Python"/>
+    <requerimientos
+        name="nodejs"
+        descripcion=""/>
+    <requerimientos
+        name="mysql-client"
+        descripcion="Cliente de conexi&#xf3;n a base de datos MySQL"/>
+    <requerimientos
+        name="libmysqlclient-dev"
+        descripcion="Librerias de conexi&#xf3;n a base de datos MySQL"/>
+    <requerimientos
+        name="tomcat7"
+        descripcion="Contenedor de Sevlets. Versi&#xf3;n 7"/>
+    <requerimientos
+        name="rabbitmq-server"
+        descripcion="Servidor de colas de mensajes"/>
+    <requerimientos
+        name="ruby"
+        version="1.9.3-p547"
+        descripcion="Entorno Ruby"
+        origen="RVM.repo"/>
+    <requerimientos
+        name="rails"
+        version="3.2.8"
+        descripcion="Framework para aplicaciones web en Ruby. Ruby on Rails"
+        origen="RVM.repo"/>
+    <requerimientos
+        name="bundler"
+        descripcion="Gestor de dependencia en Ruby on Rails"
+        origen="RVM.repo"/>
+  </sistemaOperativo>
+  <sistemaOperativo
+      name="Windows"
+      version="1.0.0"
+      descripcion="El presente Shell Script est&#xe1; dise&#xf1;ado para establecer la configuraci&#xf3;n base para el uso de CMS MONO, &#xA;                     construido por la Universidad de los Andes con financiamiento de Colciencias, como apoyo a la&#xA;                     Insdustria Colombiana de Desarrollo de Contenidos Digitales. 2014">
+    <fuentes
+        name="JDK"
+        autor="Oracle"
+        fuente="http://download.oracle.com/otn-pub/java/jdk/7u71-b14/jdk-7u71-windows-x64.exe"
+        tipoFuente="wget"/>
+    <requerimientos
+        name="jdk"
+        descripcion="Java SE Development Kit version 7"
+        origen="JDK"/>
+  </sistemaOperativo>
+</Gesco:Configuracion>

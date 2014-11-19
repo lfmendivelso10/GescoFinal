@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_u9SB8GXAEeSNR4MN6u_O4g" type="Ecore" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_XCoKMGXBEeSNR4MN6u_O4g" type="2005" fontName="Cantarell">
+    <children xmi:type="notation:DecorationNode" xmi:id="_XCoxQGXBEeSNR4MN6u_O4g" type="5005"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_XCpYUGXBEeSNR4MN6u_O4g" type="7011">
+      <children xmi:type="notation:Node" xmi:id="_Z_rxMGXBEeSNR4MN6u_O4g" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="Linux.ecore#//Arquitectura/x32"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Z_rxMWXBEeSNR4MN6u_O4g"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_aW3iIGXBEeSNR4MN6u_O4g" type="3009">
+        <element xmi:type="ecore:EEnumLiteral" href="Linux.ecore#//Arquitectura/x64"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_aW3iIWXBEeSNR4MN6u_O4g"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_XCpYUWXBEeSNR4MN6u_O4g"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_XCpYUmXBEeSNR4MN6u_O4g"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_XCpYU2XBEeSNR4MN6u_O4g" type="7012">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_XCpYVGXBEeSNR4MN6u_O4g"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_XCpYVWXBEeSNR4MN6u_O4g"/>
+    </children>
+    <element xmi:type="ecore:EEnum" href="Linux.ecore#//Arquitectura"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XCoKMWXBEeSNR4MN6u_O4g" x="25" y="495" width="101" height="81"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_oRPyUGXBEeSNR4MN6u_O4g" type="2001" fontName="Cantarell">
+    <children xmi:type="notation:DecorationNode" xmi:id="_oRRAcGXBEeSNR4MN6u_O4g" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_oRRAcWXBEeSNR4MN6u_O4g" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_9yPZIGXCEeSNR4MN6u_O4g" type="3001">
+        <element xmi:type="ecore:EAttribute" href="Linux.ecore#//LineaComando/id"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_9yPZIWXCEeSNR4MN6u_O4g"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_-o4GMGXCEeSNR4MN6u_O4g" type="3001">
+        <element xmi:type="ecore:EAttribute" href="Linux.ecore#//LineaComando/descripcion"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_-o4GMWXCEeSNR4MN6u_O4g"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_-6Ej4GXCEeSNR4MN6u_O4g" type="3001">
+        <element xmi:type="ecore:EAttribute" href="Linux.ecore#//LineaComando/rutaDestino"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_-6Ej4WXCEeSNR4MN6u_O4g"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="__JkYcGXCEeSNR4MN6u_O4g" type="3001">
+        <element xmi:type="ecore:EAttribute" href="Linux.ecore#//LineaComando/gestor"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__JkYcWXCEeSNR4MN6u_O4g"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_JZ0OUGXFEeSNR4MN6u_O4g" type="3001">
+        <element xmi:type="ecore:EAttribute" href="Linux.ecore#//LineaComando/aplicacion"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_JZ0OUWXFEeSNR4MN6u_O4g"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_oRRAcmXBEeSNR4MN6u_O4g"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_oRRAc2XBEeSNR4MN6u_O4g"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_oRRngGXBEeSNR4MN6u_O4g" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_oRRngWXBEeSNR4MN6u_O4g"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_oRRngmXBEeSNR4MN6u_O4g"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_oRRng2XBEeSNR4MN6u_O4g" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_oRRnhGXBEeSNR4MN6u_O4g"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_oRRnhWXBEeSNR4MN6u_O4g"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="Linux.ecore#//LineaComando"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oRPyUWXBEeSNR4MN6u_O4g" x="15" y="208" width="216" height="141"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_pzQXoGXBEeSNR4MN6u_O4g" type="2001" fontName="Cantarell">
+    <children xmi:type="notation:DecorationNode" xmi:id="_pzQXomXBEeSNR4MN6u_O4g" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_pzQXo2XBEeSNR4MN6u_O4g" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_rQvCQGXBEeSNR4MN6u_O4g" type="3001">
+        <element xmi:type="ecore:EAttribute" href="Linux.ecore#//Parametro/nombre"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_rQvCQWXBEeSNR4MN6u_O4g"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_rsUyEGXBEeSNR4MN6u_O4g" type="3001">
+        <element xmi:type="ecore:EAttribute" href="Linux.ecore#//Parametro/valor"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_rsUyEWXBEeSNR4MN6u_O4g"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_pzQXpGXBEeSNR4MN6u_O4g"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_pzQXpWXBEeSNR4MN6u_O4g"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_pzQXpmXBEeSNR4MN6u_O4g" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_pzQXp2XBEeSNR4MN6u_O4g"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_pzQXqGXBEeSNR4MN6u_O4g"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_pzQXqWXBEeSNR4MN6u_O4g" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_pzQXqmXBEeSNR4MN6u_O4g"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_pzQXq2XBEeSNR4MN6u_O4g"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="Linux.ecore#//Parametro"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pzQXoWXBEeSNR4MN6u_O4g" x="20" y="390" width="216"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_ZNwGMG6OEeS6nvIfXitCEg" type="2001" fontName="Cantarell">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ZNwGMm6OEeS6nvIfXitCEg" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_ZNwGM26OEeS6nvIfXitCEg" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ZNwGNG6OEeS6nvIfXitCEg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ZNwGNW6OEeS6nvIfXitCEg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_ZNwGNm6OEeS6nvIfXitCEg" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ZNwGN26OEeS6nvIfXitCEg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ZNwGOG6OEeS6nvIfXitCEg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_ZNwGOW6OEeS6nvIfXitCEg" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ZNwGOm6OEeS6nvIfXitCEg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ZNwGO26OEeS6nvIfXitCEg"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="Linux.ecore#//Script"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZNwGMW6OEeS6nvIfXitCEg"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_e48ucG6OEeS6nvIfXitCEg" type="2001" fontName="Cantarell">
+    <children xmi:type="notation:DecorationNode" xmi:id="_e498kG6OEeS6nvIfXitCEg" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_e498kW6OEeS6nvIfXitCEg" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_e498km6OEeS6nvIfXitCEg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_e498k26OEeS6nvIfXitCEg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_e498lG6OEeS6nvIfXitCEg" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_e498lW6OEeS6nvIfXitCEg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_e498lm6OEeS6nvIfXitCEg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_e498l26OEeS6nvIfXitCEg" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_e498mG6OEeS6nvIfXitCEg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_e498mW6OEeS6nvIfXitCEg"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="Linux.ecore#//Gesco"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_e48ucW6OEeS6nvIfXitCEg" x="288" y="36" width="118"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_u9SB8WXAEeSNR4MN6u_O4g"/>
+  <element xmi:type="ecore:EPackage" href="Linux.ecore#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_mXov4GXCEeSNR4MN6u_O4g" type="4003" source="_oRPyUGXBEeSNR4MN6u_O4g" target="_pzQXoGXBEeSNR4MN6u_O4g">
+    <children xmi:type="notation:DecorationNode" xmi:id="_mXpW8GXCEeSNR4MN6u_O4g" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_mXpW8WXCEeSNR4MN6u_O4g" x="8" y="-36"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_mXpW8mXCEeSNR4MN6u_O4g" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_mXpW82XCEeSNR4MN6u_O4g" x="-21" y="-32"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_mXov4WXCEeSNR4MN6u_O4g" fontName="Cantarell"/>
+    <element xmi:type="ecore:EReference" href="Linux.ecore#//LineaComando/parametros"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mXov4mXCEeSNR4MN6u_O4g" points="[-1, 12, 0, -55]$[-1, 66, 0, -1]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mXtBUGXCEeSNR4MN6u_O4g" id="(0.13425925925925927,0.9008264462809917)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mXtBUWXCEeSNR4MN6u_O4g" id="(0.08796296296296297,0.02564102564102564)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_ZN4CAG6OEeS6nvIfXitCEg" type="4003" source="_ZNwGMG6OEeS6nvIfXitCEg" target="_oRPyUGXBEeSNR4MN6u_O4g">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ZN4CA26OEeS6nvIfXitCEg" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ZN4CBG6OEeS6nvIfXitCEg" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_ZN4CBW6OEeS6nvIfXitCEg" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ZN4CBm6OEeS6nvIfXitCEg" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ZN4CAW6OEeS6nvIfXitCEg" fontName="Cantarell"/>
+    <element xmi:type="ecore:EReference" href="Linux.ecore#//Script/repositorios"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ZN4CAm6OEeS6nvIfXitCEg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_ZN6eQG6OEeS6nvIfXitCEg" type="4003" source="_ZNwGMG6OEeS6nvIfXitCEg" target="_oRPyUGXBEeSNR4MN6u_O4g">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ZN6eQ26OEeS6nvIfXitCEg" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ZN6eRG6OEeS6nvIfXitCEg" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_ZN6eRW6OEeS6nvIfXitCEg" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ZN6eRm6OEeS6nvIfXitCEg" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ZN6eQW6OEeS6nvIfXitCEg" fontName="Cantarell"/>
+    <element xmi:type="ecore:EReference" href="Linux.ecore#//Script/aplicaciones"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ZN6eQm6OEeS6nvIfXitCEg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_jUoPkG6OEeS6nvIfXitCEg" type="4003" source="_e48ucG6OEeS6nvIfXitCEg" target="_ZNwGMG6OEeS6nvIfXitCEg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_jUo2oG6OEeS6nvIfXitCEg" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_jUo2oW6OEeS6nvIfXitCEg" x="-16" y="9"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_jUo2om6OEeS6nvIfXitCEg" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_jUo2o26OEeS6nvIfXitCEg" x="-37" y="27"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_jUoPkW6OEeS6nvIfXitCEg" fontName="Cantarell"/>
+    <element xmi:type="ecore:EReference" href="Linux.ecore#//Gesco/script"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jUoPkm6OEeS6nvIfXitCEg" points="[-13, -1, 133, 10]$[-132, -11, 14, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jUuWMG6OEeS6nvIfXitCEg" id="(0.11016949152542373,0.49056603773584906)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jUuWMW6OEeS6nvIfXitCEg" id="(0.9171597633136095,0.5368421052631579)"/>
+  </edges>
+</notation:Diagram>

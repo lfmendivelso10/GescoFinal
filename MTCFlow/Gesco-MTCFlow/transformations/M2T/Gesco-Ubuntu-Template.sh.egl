@@ -1,0 +1,82 @@
+[%
+var script:Script = Script.allInstances().get(0);
+%]#!/bin/bash
+# Proyecto Gesco
+# Descripcion: [%=script.descripcion%]
+
+#
+#Pre-requerimientos
+#
+apt-get install -y curl #Descripcion: Gestor de descargas. Arquitectura: x64
+apt-get install -y libcurl4-openssl-dev #Descripcion: Coleccion de librerias para habilitar comunicaciones vía CURL con SSL. Arquitectura: x64
+
+#
+# Repositorios
+#
+[%=generarRepos(script.repositorios)%]
+
+# Configuracion adicional para repositorios
+source ~/.rvm/scripts/rvm
+echo "source ~/.rvm/scripts/rvm" >> ~/.bashrc
+
+#
+# Aplicaciones
+#
+[%=generarApps(script.aplicaciones)%]
+
+[%
+// ===== Operaciones =====
+operation generarRepos(repositorios:Set): String{
+
+	var lineas:String;	
+	for(repo in repositorios){
+		switch(repo.gestor){
+			case "ppa" : lineas = lineas + 'add-apt-repository -y '+repo.aplicacion;
+			case "apt-source" : lineas = lineas + "echo "+repo.aplicacion+" >> /etc/apt/source.list";
+			case "apt-key" : lineas = lineas + 'apt-ket add '+repo.aplicacion;
+			case "wget" : lineas = lineas + 'wget -t 0 -c '+repo.aplicacion;
+			case "curl" : lineas = lineas + 'curl -L '+repo.aplicacion + '| bash -s stable';
+			default : lineas = lineas + '# add-apt-repository -y '+repo.aplicacion; 
+		}
+		lineas = lineas +" #"+repo.descripcion;
+		lineas = lineas + "\n";
+	}	
+	return lineas;
+}
+
+operation generarApps(apps:Set): String{
+
+	var lineas:String;	
+	for(app in apps){
+		if(app.gestor <> "Default"){
+			
+			if(app.gestor == "ppa"){
+				lineas = lineas + 'apt-get install -y '+app.aplicacion;
+		    }
+		    else if(app.gestor == "curl"){
+		    
+		    	if(app.aplicacion == "ruby"){
+		    		lineas = lineas + 'rvm install '+app.parametros.get(0).valor+"\n";
+		    		lineas = lineas + 'rvm use '+app.parametros.get(0).valor+" --default";
+		    	}
+		    	else{
+		    		lineas = lineas + 'gem install '+app.aplicacion;
+		    		for(p in app.parametros){
+		    			lineas = lineas + ' --'+p.nombre+" "+p.valor;
+		    		}	
+		    	}	 
+		   }
+		   else{
+		   		lineas = lineas + '#Error. No es posible procesar esta dependencia '+app.aplicacion;
+		   }
+		}
+		else{
+			lineas = lineas + 'apt-get install -y '+app.aplicacion;
+		}	
+		lineas = lineas +" #"+app.descripcion;
+		lineas = lineas + "\n";
+	}	
+	return lineas;
+}
+
+%]

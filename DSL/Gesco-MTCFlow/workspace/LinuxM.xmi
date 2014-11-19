@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Linux:Gesco xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Linux="http://co.edu.uniandes.david.mono.gesco.linux">
+  <script version="1.0.0" descripcion="El presente Shell Script est&#xe1; dise&#xf1;ado para establecer la configuraci&#xf3;n base para el uso de CMS MONO, construido por la Universidad de los Andes con financiamiento de Colciencias, como apoyo a la Insdustria Colombiana de Desarrollo de Contenidos Digitales. 2014">
+    <repositorios id="Java" descripcion="Autor: Oracle. Fuente: ppa:webupd8team/java" rutaDestino="" gestor="ppa" aplicacion="ppa:webupd8team/java"/>
+    <repositorios id="ffmpeg.repo" descripcion="Autor: jon-severinsson. Fuente: ppa:jon-severinsson/ffmpeg" rutaDestino="" gestor="ppa" aplicacion="ppa:jon-severinsson/ffmpeg"/>
+    <repositorios id="node.js" descripcion="Autor: chris-lea. Fuente: ppa:chris-lea/node.js" rutaDestino="" gestor="ppa" aplicacion="ppa:chris-lea/node.js"/>
+    <repositorios id="rabbitmq-source" descripcion="Autor: RabbitMQ. Fuente: deb http://www.rabbitmq.com/debian/ testing main" rutaDestino="" gestor="apt-source" aplicacion="deb http://www.rabbitmq.com/debian/ testing main"/>
+    <repositorios id="rabbitmq-key-file" descripcion="Autor: RabbitMQ. Fuente: http://www.rabbitmq.com/rabbitmq-signing-key-public.asc" rutaDestino="" gestor="wget" aplicacion="http://www.rabbitmq.com/rabbitmq-signing-key-public.asc"/>
+    <repositorios id="rabbitmq-key-installer" descripcion="Autor: RabbitMQ. Fuente: rabbitmq-signing-key-public.asc" rutaDestino="" gestor="apt-key" aplicacion="rabbitmq-signing-key-public.asc"/>
+    <repositorios id="RVM.repo" descripcion="Autor: RVM.io. Fuente: https://get.rvm.io" rutaDestino="" gestor="curl" aplicacion="https://get.rvm.io"/>
+    <aplicaciones id="lamp-server^" descripcion="Descripcion: LAMP server - Linux, Apache, MySQL and PHP. Arquitectura: x64" gestor="Default" aplicacion="lamp-server^"/>
+    <aplicaciones id="oracle-jdk7-installer" descripcion="Descripcion: Oracle Java Development Kit versi&#xf3;n 7. Arquitectura: x64" gestor="ppa" aplicacion="oracle-jdk7-installer"/>
+    <aplicaciones id="oracle-java7-set-default" descripcion="Descripcion: Oracle Java Development Kit versi&#xf3;n 7. Arquitectura: x64" gestor="ppa" aplicacion="oracle-java7-set-default"/>
+    <aplicaciones id="imagemagick" descripcion="Descripcion: Suite de funciones bitmaps por consola. Arquitectura: x64" gestor="Default" aplicacion="imagemagick"/>
+    <aplicaciones id="ffmpeg" descripcion="Descripcion: Colecci&#xf3;n de librerias para gesti&#xf3;n de archivos de audio y video. Arquitectura: x64" gestor="Default" aplicacion="ffmpeg"/>
+    <aplicaciones id="libimage-exiftool-perl" descripcion="Descripcion: Libreria para gesti&#xf3;n de metadata. Arquitectura: x64" gestor="Default" aplicacion="libimage-exiftool-perl"/>
+    <aplicaciones id="perl-doc" descripcion="Descripcion: Administraci&#xf3;n de archivos desde Perl. Arquitectura: x64" gestor="Default" aplicacion="perl-doc"/>
+    <aplicaciones id="dcraw" descripcion="Descripcion: . Arquitectura: x64" gestor="Default" aplicacion="dcraw"/>
+    <aplicaciones id="gpac" descripcion="Descripcion: . Arquitectura: x64" gestor="Default" aplicacion="gpac"/>
+    <aplicaciones id="git-core" descripcion="Descripcion: N&#xfa;cleo para gesti&#xf3;n de repositorios GIT. Arquitectura: x64" gestor="Default" aplicacion="git-core"/>
+    <aplicaciones id="zlib1g-dev" descripcion="Descripcion: . Arquitectura: x64" gestor="Default" aplicacion="zlib1g-dev"/>
+    <aplicaciones id="build-essential" descripcion="Descripcion: Suite de librerias para modificaci&#xf3;n de kernel. Arquitectura: x64" gestor="Default" aplicacion="build-essential"/>
+    <aplicaciones id="libssl-dev" descripcion="Descripcion: Librerias para aplicaci&#xf3;n de SSL. Arquitectura: x64" gestor="Default" aplicacion="libssl-dev"/>
+    <aplicaciones id="libreadline-dev" descripcion="Descripcion: . Arquitectura: x64" gestor="Default" aplicacion="libreadline-dev"/>
+    <aplicaciones id="libyaml-dev" descripcion="Descripcion: . Arquitectura: x64" gestor="Default" aplicacion="libyaml-dev"/>
+    <aplicaciones id="libsqlite3-dev" descripcion="Descripcion: Librerias para administraci&#xf3;n y uso de Sqlite3(DBMS). Arquitectura: x64" gestor="Default" aplicacion="libsqlite3-dev"/>
+    <aplicaciones id="sqlite3" descripcion="Descripcion: Sqlite 3 DBMS. Arquitectura: x64" gestor="Default" aplicacion="sqlite3"/>
+    <aplicaciones id="libxml2-dev" descripcion="Descripcion: Colecci&#xf3;n de librerias para la gesti&#xf3;n de archivo XML. Arquitectura: x64" gestor="Default" aplicacion="libxml2-dev"/>
+    <aplicaciones id="libxslt1-dev" descripcion="Descripcion: . Arquitectura: x64" gestor="Default" aplicacion="libxslt1-dev"/>
+    <aplicaciones id="python-software-properties" descripcion="Descripcion: Administraci&#xf3;n de archivos y fuentes Python. Arquitectura: x64" gestor="Default" aplicacion="python-software-properties"/>
+    <aplicaciones id="nodejs" descripcion="Descripcion: . Arquitectura: x64" gestor="Default" aplicacion="nodejs"/>
+    <aplicaciones id="mysql-client" descripcion="Descripcion: Cliente de conexi&#xf3;n a base de datos MySQL. Arquitectura: x64" gestor="Default" aplicacion="mysql-client"/>
+    <aplicaciones id="libmysqlclient-dev" descripcion="Descripcion: Librerias de conexi&#xf3;n a base de datos MySQL. Arquitectura: x64" gestor="Default" aplicacion="libmysqlclient-dev"/>
+    <aplicaciones id="tomcat7" descripcion="Descripcion: Contenedor de Sevlets. Versi&#xf3;n 7. Arquitectura: x64" gestor="Default" aplicacion="tomcat7"/>
+    <aplicaciones id="rabbitmq-server" descripcion="Descripcion: Servidor de colas de mensajes. Arquitectura: x64" gestor="Default" aplicacion="rabbitmq-server"/>
+    <aplicaciones id="ruby" descripcion="Descripcion: Entorno Ruby. Version: 1.9.3-p547. Arquitectura: x64" gestor="curl" aplicacion="ruby">
+      <parametros nombre="version" valor="1.9.3-p547"/>
+    </aplicaciones>
+    <aplicaciones id="rails" descripcion="Descripcion: Framework para aplicaciones web en Ruby. Ruby on Rails. Version: 3.2.8. Arquitectura: x64" gestor="curl" aplicacion="rails">
+      <parametros nombre="version" valor="3.2.8"/>
+    </aplicaciones>
+    <aplicaciones id="bundler" descripcion="Descripcion: Gestor de dependencia en Ruby on Rails. Arquitectura: x64" gestor="curl" aplicacion="bundler"/>
+  </script>
+</Linux:Gesco>
