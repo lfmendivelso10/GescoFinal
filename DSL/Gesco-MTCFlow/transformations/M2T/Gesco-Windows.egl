@@ -1,0 +1,3 @@
+[% var t: Template:=TemplateFactory.load('Gesco-Windows-Template.bat.egl');
+   t.generate('./Gesco-Windows.bat');
+%]
