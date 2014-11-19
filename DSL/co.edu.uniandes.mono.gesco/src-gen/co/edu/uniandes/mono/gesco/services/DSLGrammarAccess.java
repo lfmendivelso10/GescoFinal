@@ -369,8 +369,8 @@ public class DSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//Software:
-		//	{Software} "Software" "=" name=EString ("," "version:" version=EString)? ("," "descripcion:" descripcion=EString)? ","
-		//	"arquitectura:" arquitectura=Arquitectura ("," "rutaDestino:" rutaDestino=EString)? ("," "dependencia:" "("
+		//	{Software} "Software" "=" name=EString ("," "version:" version=EString)? ("," "descripcion:" descripcion=EString)?
+		//	"," "arquitectura:" arquitectura=Arquitectura ("," "rutaDestino:" rutaDestino=EString)? ("," "dependencia:" "("
 		//	dependencia+=[Software|EString] ("," dependencia+=[Software|EString])* ")")? ("," "origen:" "("
 		//	origen+=[Fuentes|EString] ("," origen+=[Fuentes|EString])* ")")? ";";
 		public ParserRule getRule() { return rule; }
@@ -670,8 +670,8 @@ public class DSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Software:
-	//	{Software} "Software" "=" name=EString ("," "version:" version=EString)? ("," "descripcion:" descripcion=EString)? ","
-	//	"arquitectura:" arquitectura=Arquitectura ("," "rutaDestino:" rutaDestino=EString)? ("," "dependencia:" "("
+	//	{Software} "Software" "=" name=EString ("," "version:" version=EString)? ("," "descripcion:" descripcion=EString)?
+	//	"," "arquitectura:" arquitectura=Arquitectura ("," "rutaDestino:" rutaDestino=EString)? ("," "dependencia:" "("
 	//	dependencia+=[Software|EString] ("," dependencia+=[Software|EString])* ")")? ("," "origen:" "("
 	//	origen+=[Fuentes|EString] ("," origen+=[Fuentes|EString])* ")")? ";";
 	public SoftwareElements getSoftwareAccess() {
