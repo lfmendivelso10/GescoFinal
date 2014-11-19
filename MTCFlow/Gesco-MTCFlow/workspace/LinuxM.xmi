@@ -7,7 +7,6 @@
     <repositorios id="rabbitmq-source" descripcion="Autor: RabbitMQ. Fuente: deb http://www.rabbitmq.com/debian/ testing main" rutaDestino="" gestor="apt-source" aplicacion="deb http://www.rabbitmq.com/debian/ testing main"/>
     <repositorios id="rabbitmq-key-file" descripcion="Autor: RabbitMQ. Fuente: http://www.rabbitmq.com/rabbitmq-signing-key-public.asc" rutaDestino="" gestor="wget" aplicacion="http://www.rabbitmq.com/rabbitmq-signing-key-public.asc"/>
     <repositorios id="rabbitmq-key-installer" descripcion="Autor: RabbitMQ. Fuente: rabbitmq-signing-key-public.asc" rutaDestino="" gestor="apt-key" aplicacion="rabbitmq-signing-key-public.asc"/>
-    <repositorios id="RVM.repo" descripcion="Autor: RVM.io. Fuente: https://get.rvm.io" rutaDestino="" gestor="curl" aplicacion="https://get.rvm.io"/>
     <aplicaciones id="lamp-server^" descripcion="Descripcion: LAMP server - Linux, Apache, MySQL and PHP. Arquitectura: x64" gestor="Default" aplicacion="lamp-server^"/>
     <aplicaciones id="oracle-jdk7-installer" descripcion="Descripcion: Oracle Java Development Kit versi&#xf3;n 7. Arquitectura: x64" gestor="ppa" aplicacion="oracle-jdk7-installer"/>
     <aplicaciones id="oracle-java7-set-default" descripcion="Descripcion: Oracle Java Development Kit versi&#xf3;n 7. Arquitectura: x64" gestor="ppa" aplicacion="oracle-java7-set-default"/>
@@ -33,12 +32,7 @@
     <aplicaciones id="libmysqlclient-dev" descripcion="Descripcion: Librerias de conexi&#xf3;n a base de datos MySQL. Arquitectura: x64" gestor="Default" aplicacion="libmysqlclient-dev"/>
     <aplicaciones id="tomcat7" descripcion="Descripcion: Contenedor de Sevlets. Versi&#xf3;n 7. Arquitectura: x64" gestor="Default" aplicacion="tomcat7"/>
     <aplicaciones id="rabbitmq-server" descripcion="Descripcion: Servidor de colas de mensajes. Arquitectura: x64" gestor="Default" aplicacion="rabbitmq-server"/>
-    <aplicaciones id="ruby" descripcion="Descripcion: Entorno Ruby. Version: 1.9.3-p547. Arquitectura: x64" gestor="curl" aplicacion="ruby">
-      <parametros nombre="version" valor="1.9.3-p547"/>
-    </aplicaciones>
-    <aplicaciones id="rails" descripcion="Descripcion: Framework para aplicaciones web en Ruby. Ruby on Rails. Version: 3.2.8. Arquitectura: x64" gestor="curl" aplicacion="rails">
-      <parametros nombre="version" valor="3.2.8"/>
-    </aplicaciones>
-    <aplicaciones id="bundler" descripcion="Descripcion: Gestor de dependencia en Ruby on Rails. Arquitectura: x64" gestor="curl" aplicacion="bundler"/>
+    <aplicaciones id="curl" descripcion="Descripcion: Gestor de descargas. Arquitectura: x64" gestor="Default" aplicacion="curl"/>
+    <aplicaciones id="libcurl4-openssl-dev" descripcion="Descripcion: Coleccion de librerias para habilitar comunicaciones v&#xed;a CURL con SSL. Arquitectura: x64" gestor="Default" aplicacion="libcurl4-openssl-dev"/>
   </script>
 </Linux:Gesco>

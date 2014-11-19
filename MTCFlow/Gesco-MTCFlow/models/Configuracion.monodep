@@ -12,7 +12,6 @@ Configuracion
 			Fuente = "rabbitmq-source", autor: "RabbitMQ", fuente: "deb http://www.rabbitmq.com/debian/ testing main", tipoFuente: "apt-source";
 			Fuente = "rabbitmq-key-file", autor: "RabbitMQ", fuente: "http://www.rabbitmq.com/rabbitmq-signing-key-public.asc", tipoFuente: "wget";
 			Fuente = "rabbitmq-key-installer", autor: "RabbitMQ", fuente: "rabbitmq-signing-key-public.asc", tipoFuente: "apt-key";
-			Fuente = "RVM.repo", autor: "RVM.io", fuente: "https://get.rvm.io", tipoFuente: "curl";
 		}
 		requerimientos{
 			Software = "lamp-server^",descripcion:"LAMP server - Linux, Apache, MySQL and PHP", arquitectura: x64;
@@ -40,17 +39,14 @@ Configuracion
 			Software = "libmysqlclient-dev", descripcion: "Librerias de conexión a base de datos MySQL",arquitectura: x64;
 			Software = tomcat7, descripcion: "Contenedor de Sevlets. Versión 7",arquitectura:x64;
 			Software = "rabbitmq-server", descripcion: "Servidor de colas de mensajes",arquitectura: x64;
-			Software = ruby, version: "1.9.3-p547", descripcion: "Entorno Ruby", arquitectura: x64, origen:("RVM.repo");
-			Software = rails, version: "3.2.8", descripcion: "Framework para aplicaciones web en Ruby. Ruby on Rails", arquitectura: x64, origen:("RVM.repo");
-			Software = bundler, descripcion: "Gestor de dependencia en Ruby on Rails", arquitectura: x64, origen:("RVM.repo");
+			Software = curl, descripcion: "Gestor de descargas",arquitectura: x64;
+			Software = "libcurl4-openssl-dev", descripcion: "Coleccion de librerias para habilitar comunicaciones vía CURL con SSL",arquitectura: x64;
 		}
 	},
 	"Windows"
 	{
 		version "1.0.0"
-		descripcion "El presente Shell Script está diseñado para establecer la configuración base para el uso de CMS MONO, 
-                     construido por la Universidad de los Andes con financiamiento de Colciencias, como apoyo a la
-                     Insdustria Colombiana de Desarrollo de Contenidos Digitales. 2014"
+		descripcion "El presente Shell Script está diseñado para establecer la configuración base para el uso de CMS MONO, construido por la Universidad de los Andes con financiamiento de Colciencias, como apoyo a la Insdustria Colombiana de Desarrollo de Contenidos Digitales. 2014"
 		arquitectura x64
 		fuentes{
 			Fuente = JDK ,autor: "Oracle" , fuente: "http://download.oracle.com/otn-pub/java/jdk/7u71-b14/jdk-7u71-windows-x64.exe" , tipoFuente: "wget" ;
