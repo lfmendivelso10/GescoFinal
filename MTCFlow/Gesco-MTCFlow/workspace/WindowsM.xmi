@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Windows:Gesco
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:Windows="http://co.edu.uniandes.david.mono.gesco.windows">
+  <contiene>
+    <lineasCodigo>
+      <complementa/>
+    </lineasCodigo>
+  </contiene>
+</Windows:Gesco>

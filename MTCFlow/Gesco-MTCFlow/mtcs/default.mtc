@@ -3,20 +3,29 @@
   <files name="Gesco-UbuntuDebian.sh" URI="gen/Gesco-UbuntuDebian.sh"/>
   <files name="App DSL" URI="models/Configuracion.monodep"/>
   <files name="Gesco-CentosFedora.sh" URI="gen/Gesco-CentosFedora.sh"/>
+  <files name="Gesco-Windows.bat" URI="gen/Gesco-Windows.bat"/>
   <metamodels name="RequerimientosMM" URI="" alias="RequerimientosMM" autoregister="false" metamodelURI="http://co.edu.uniandes.david.mono.gesco.requerimientos"/>
   <metamodels name="LinuxMM" URI="" alias="LinuxMM" autoregister="false" metamodelURI="http://co.edu.uniandes.david.mono.gesco.linux"/>
+  <metamodels name="WindowsMM" alias="WindowsMM" metamodelURI="http://co.edu.uniandes.david.mono.gesco.windows"/>
   <models name="Requerimientos" URI="app.xmi" metamodels="//@metamodels.0"/>
   <models name="LinuxM" URI="LinuxM.xmi" metamodels="//@metamodels.1"/>
+  <models name="WindowsM" URI="" metamodels="//@metamodels.2"/>
   <inputModels model="//@models.0" modelAlias="RequerimientosMM" transformation="//@transformations.0" metamodelAlias="RequerimientosMM"/>
   <inputModels model="//@models.1" modelAlias="LinuxM" transformation="//@transformations.1"/>
   <inputModels model="//@models.1" modelAlias="LinuxM" transformation="//@transformations.3"/>
+  <inputModels model="//@models.0" modelAlias="RequerimientosMM" transformation="//@transformations.4"/>
+  <inputModels model="//@models.2" modelAlias="WindowsM" transformation="//@transformations.5"/>
   <transformations xsi:type="com.mtcflow.model:M2MTransformation" name="Requerimientos2Linux" URI="Requerimientos2Linux.etl"/>
   <transformations xsi:type="com.mtcflow.model:M2TTransformation" name="Linux2ScriptApt" URI="Gesco-Apt.egl" target="gen"/>
   <transformations xsi:type="com.mtcflow.model:T2MTransformation" name="gen xmi" URI="generate.xtext"/>
   <transformations xsi:type="com.mtcflow.model:M2TTransformation" name="Linux2ScriptYum" URI="Gesco-RPM.egl" target="gen"/>
+  <transformations xsi:type="com.mtcflow.model:M2MTransformation" name="Requerimientos2Windows" URI="Requerimientos2Windows.etl"/>
+  <transformations xsi:type="com.mtcflow.model:M2TTransformation" name="Windows2ScriptBatch" URI="Gesco-Windows.egl" target="gen"/>
   <outputModels modelAlias="LinuxMM" model="//@models.1" transformation="//@transformations.0" metamodelAlias="LinuxMM"/>
   <outputModels modelAlias="App DSL" model="//@models.0" transformation="//@transformations.2"/>
+  <outputModels modelAlias="WindowsMM" model="//@models.2" transformation="//@transformations.4"/>
   <inputFiles file="//@files.1" transformation="//@transformations.2"/>
   <outputFiles transformation="//@transformations.1" file="//@files.0"/>
   <outputFiles transformation="//@transformations.3" file="//@files.2"/>
+  <outputFiles transformation="//@transformations.5" file="//@files.3"/>
 </com.mtcflow.model:MTC>

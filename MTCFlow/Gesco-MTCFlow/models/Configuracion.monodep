@@ -6,7 +6,7 @@ Configuracion
 		descripcion "El presente Shell Script está diseñado para establecer la configuración base para el uso de CMS MONO, construido por la Universidad de los Andes con financiamiento de Colciencias, como apoyo a la Insdustria Colombiana de Desarrollo de Contenidos Digitales. 2014"
 		arquitectura x64
 		fuentes{
-			Fuente = Java ,autor: "Oracle" , fuente: "ppa:webupd8team/java" , tipoFuente: "ppa" ;
+			
 			Fuente = "ffmpeg.repo" ,autor: "jon-severinsson" , fuente: "ppa:jon-severinsson/ffmpeg" , tipoFuente: "ppa" ;
 			Fuente = "node.js" ,autor: "chris-lea" , fuente: "ppa:chris-lea/node.js" , tipoFuente: "ppa" ;
 			Fuente = "rabbitmq-source", autor: "RabbitMQ", fuente: "deb http://www.rabbitmq.com/debian/ testing main", tipoFuente: "apt-source";
@@ -15,8 +15,7 @@ Configuracion
 		}
 		requerimientos{
 			Software = "lamp-server^",descripcion:"LAMP server - Linux, Apache, MySQL and PHP", arquitectura: x64;
-			Software = "oracle-jdk7-installer",descripcion:"Oracle Java Development Kit versión 7", arquitectura: x64 , origen: (Java); 
-			Software = "oracle-java7-set-default",descripcion:"Oracle Java Development Kit versión 7", arquitectura: x64 , origen: (Java);
+			
 			Software = imagemagick,descripcion:"Suite de funciones bitmaps por consola", arquitectura: x64;
 			Software = ffmpeg ,descripcion: "Colección de librerias para gestión de archivos de audio y video", arquitectura: x64;
 			Software = "libimage-exiftool-perl", descripcion: "Libreria para gestión de metadata",arquitectura: x64;
@@ -49,10 +48,39 @@ Configuracion
 		descripcion "El presente Shell Script está diseñado para establecer la configuración base para el uso de CMS MONO, construido por la Universidad de los Andes con financiamiento de Colciencias, como apoyo a la Insdustria Colombiana de Desarrollo de Contenidos Digitales. 2014"
 		arquitectura x64
 		fuentes{
-			Fuente = JDK ,autor: "Oracle" , fuente: "http://download.oracle.com/otn-pub/java/jdk/7u71-b14/jdk-7u71-windows-x64.exe" , tipoFuente: "wget" ;
+			Fuente = "WAMP-Server" , autor: "Romain Bourdon" , fuente: "http://sourceforge.net/projects/wampserver/files/latest/download" , tipoFuente: "wget" ;
+			Fuente = Java , autor: "Oracle" , fuente: "http://download.oracle.com/otn-pub/java/jdk/7u71-b14/jdk-7u71-windows-x64.exe" , tipoFuente: "wget" ;
+			Fuente = "Tomcat7" , autor: "Apache" , fuente: "http://www.trieuvan.com/apache/tomcat/tomcat-7/v7.0.57/bin/apache-tomcat-7.0.57-windows-x64.zip" , tipoFuente: wget;
+			Fuente = "Ghostscript" , autor: "Artifex Software" , fuente: "http://sourceforge.net/projects/ghostscript/files/latest/download", tipoFuente: wget;
+			Fuente = "ImageMagick", autor: "ImageMagick Studio LLC" , fuente: "http://www.imagemagick.org/download/binaries/ImageMagick-6.9.0-0-Q16-x64-dll.exe" , tipoFuente: wget;
+			Fuente = "FFmpeg", autor: "chris-lea", fuente: "wget http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20140506-git-2baf1c8-win64-static.7z", tipoFuente: wget;
+			Fuente = "Exiftool", autor: "Phil Harvey", fuente: "http://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-9.76.tar.gz", tipoFuente: wget;
+			Fuente = "UFraw", autor: "Udi Fuchs", fuente: "http://sourceforge.net/projects/ufraw/files/ufraw/ufraw-0.19.2/ufraw-0.19.2-2-setup.exe/download", tipoFuente: wget;
+			Fuente = "MP4Box", autor: "Multimedia Open Source Project", fuente: "http://www.videohelp.com/download/GPAC.Framework.Setup-0.5.1-DEV-rev5491-x64.exe", tipoFuente: wget;
+			Fuente = "Razuna", autor: "Fetzer&Weibel GmbH", fuente: "http://razuna.org/razuna-tomcat.cfm?v=1.7", tipoFuente: wget;
+			Fuente = "RabbitMQ", autor: "Pivotal", fuente: "https://www.rabbitmq.com/releases/rabbitmq-server/v3.4.1/rabbitmq-server-3.4.1.exe", tipoFuente: wget;
+			Fuente = "Railsinstaller", autor: "Engine Yard", fuente: "https://s3.amazonaws.com/railsinstaller/Windows/railsinstaller-2.2.4.exe", tipoFuente: wget;
 		}
 		requerimientos{
-			Software = "jdk",descripcion:"Java SE Development Kit version 7", arquitectura: x64,origen: (JDK);
+			Software = "wamp-server",descripcion:"WAMP server - Windows, Apache, MySQL and PHP", arquitectura: x64;
+			Software = "jdk",descripcion:"Java SE Development Kit version 7", arquitectura: x64;
+			Software = "tomcat7-Win", descripcion: "Contenedor de Sevlets. Versión 7",arquitectura:x64;
+			Software = "ghostscript", descripcion: "interprete para el lenguaje PostScript y para PDF", arquitectura:x64;
+			Software = "imageMagick", descripcion: "is a software suite to create, edit, compose, or convert bitmap images", arquitectura:x64;
+			Software = "FFmpeg-Win", descripcion: "A complete, cross-platform solution to record, convert and stream audio and video.", arquitectura:x64;
+			Software = "exiftool", descripcion: "Platform-independent Perl library plus a command-line application for reading, writing and editing meta information in a wide variety of files.", arquitectura:x64;
+			Software = "uFraw", descripcion: "The Unidentified Flying Raw (UFRaw) is a utility to read and manipulate raw images from digital cameras.", arquitectura:x64;
+			Software = "mp4Box", descripcion: "Conversor MPEG-4. Puede importar vídeo MPEG-4 (DivX/ Xvid/ 3ivx/ ffmpeg) y flujos de audio hacia un contenedor *.mp4.", arquitectura:x64;
+			Software = "razuna", descripcion: "Hosted Digital Asset Management system", arquitectura:x64;
+			Software = "rabbitMQ", descripcion: "Servidor de colas de mensajes",arquitectura: x64;
+			Software = "ruby", descripcion: "Lenguaje de programación dinámico y de código abierto enfocado en la simplicidad y productividad.", arquitectura:x64;
+			Software = "rails", descripcion: "Framework de aplicaciones web de código abierto escrito en el lenguaje de programación Ruby", arquitectura:x64;
+			Software = "bundler", descripcion: "Provides a consistent environment for Ruby projects by tracking and installing the exact gems and versions that are needed.", arquitectura:x64;
+			Software = "git", descripcion: "Software de control de versiones diseñado por Linus Torvalds", arquitectura:x64;
+			Software = "sqlite", descripcion: "Es un sistema de gestión de bases de datos relacional compatible con ACID", arquitectura:x64;
+			Software = "tinyTDS", descripcion: "FreeTDS library for Ruby using DB-Library", arquitectura:x64;
+			Software = "sqlServerSupport", descripcion: "Adapatador SQL Server para ActiveRecord", arquitectura:x64;
+			Software = "developmentKit", descripcion: "Toolkit that makes it easy to build and use native C/C++ extensions such as RDiscount and RedCloth for Ruby on Windows.", arquitectura:x64;
 		}
 	}
 }
