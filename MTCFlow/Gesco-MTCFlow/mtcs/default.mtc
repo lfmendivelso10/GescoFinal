@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <com.mtcflow.model:MTC xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.mtcflow.model="http://com.mtcflow.mtc/1.1">
-  <files name="Gesco-Ubuntu.sh" URI="gen/Gesco-Ubuntu.sh"/>
+  <files name="Gesco-UbuntuDebian.sh" URI="gen/Gesco-UbuntuDebian.sh"/>
   <files name="App DSL" URI="models/Configuracion.monodep"/>
+  <files name="Gesco-CentosFedora.sh" URI="gen/Gesco-CentosFedora.sh"/>
   <metamodels name="RequerimientosMM" URI="" alias="RequerimientosMM" autoregister="false" metamodelURI="http://co.edu.uniandes.david.mono.gesco.requerimientos"/>
   <metamodels name="LinuxMM" URI="" alias="LinuxMM" autoregister="false" metamodelURI="http://co.edu.uniandes.david.mono.gesco.linux"/>
   <models name="Requerimientos" URI="app.xmi" metamodels="//@metamodels.0"/>
   <models name="LinuxM" URI="LinuxM.xmi" metamodels="//@metamodels.1"/>
   <inputModels model="//@models.0" modelAlias="RequerimientosMM" transformation="//@transformations.0" metamodelAlias="RequerimientosMM"/>
   <inputModels model="//@models.1" modelAlias="LinuxM" transformation="//@transformations.1"/>
+  <inputModels model="//@models.1" modelAlias="LinuxM" transformation="//@transformations.3"/>
   <transformations xsi:type="com.mtcflow.model:M2MTransformation" name="Requerimientos2Linux" URI="Requerimientos2Linux.etl"/>
-  <transformations xsi:type="com.mtcflow.model:M2TTransformation" name="Linux2UbuntuScript" URI="Gesco-Ubuntu.egl" target="gen"/>
+  <transformations xsi:type="com.mtcflow.model:M2TTransformation" name="Linux2ScriptApt" URI="Gesco-Apt.egl" target="gen"/>
   <transformations xsi:type="com.mtcflow.model:T2MTransformation" name="gen xmi" URI="generate.xtext"/>
+  <transformations xsi:type="com.mtcflow.model:M2TTransformation" name="Linux2ScriptYum" URI="Gesco-RPM.egl" target="gen"/>
   <outputModels modelAlias="LinuxMM" model="//@models.1" transformation="//@transformations.0" metamodelAlias="LinuxMM"/>
   <outputModels modelAlias="App DSL" model="//@models.0" transformation="//@transformations.2"/>
   <inputFiles file="//@files.1" transformation="//@transformations.2"/>
   <outputFiles transformation="//@transformations.1" file="//@files.0"/>
+  <outputFiles transformation="//@transformations.3" file="//@files.2"/>
 </com.mtcflow.model:MTC>

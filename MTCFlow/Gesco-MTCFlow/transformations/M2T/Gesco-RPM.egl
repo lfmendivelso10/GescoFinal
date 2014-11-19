@@ -1,0 +1,3 @@
+[% var t: Template:=TemplateFactory.load('Gesco-RPM-script.egl');
+   t.generate('./Gesco-CentosFedora.sh');
+%]

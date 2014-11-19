@@ -2,7 +2,6 @@
 # Proyecto Gesco
 # Descripcion: El presente Shell Script está diseñado para establecer la configuración base para el uso de CMS MONO, construido por la Universidad de los Andes con financiamiento de Colciencias, como apoyo a la Insdustria Colombiana de Desarrollo de Contenidos Digitales. 2014
 
-sudo -s
 cd ~/
 mkdir temp
 cd temp
@@ -75,7 +74,6 @@ wget -t 0 -c http://157.253.238.183/temp/mono.tar.gz
 chmod 777 mono.tar.gz
 tar -xzvf mono.tar.gz
 chmod 777 -R mono
-cd mono
 bundle install
 
 cd ~/
@@ -94,6 +92,4 @@ echo "Ingrese a la direccion: 'localhost:3000'"
 echo "El usuario por defecto es: admin@david.com"
 echo "Y la contraseña es: 12345678"
 echo "====== Gracias por usar Gesco ======"
-echo "====== ======"
-echo "====== Autores: Luis Felipe Mendivelso y Gabriel Jaime Lopez ======"
-echo "====== ======"
+
