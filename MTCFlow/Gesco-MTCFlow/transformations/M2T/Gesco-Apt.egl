@@ -1,3 +1,3 @@
-[% var t: Template:=TemplateFactory.load('Gesco-Ubuntu-Template.sh.egl');
-   t.generate('./Gesco-Ubuntu.sh');
+[% var t: Template:=TemplateFactory.load('Gesco-Apt-script.egl');
+   t.generate('./Gesco-UbuntuDebian.sh');
 %]

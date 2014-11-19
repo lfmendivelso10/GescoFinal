@@ -4,9 +4,14 @@ var script:Script = Script.allInstances().get(0);
 # Proyecto Gesco
 # Descripcion: [%=script.descripcion%]
 
+#
+# Preparación de Espacio de Trabajo
+#
 cd ~/
-mkdir temp
-cd temp
+mkdir temporal
+cd temporal
+apt-get install -y curl #Descripcion: Gestor de descargas. Arquitectura: x64
+apt-get install -y libcurl4-openssl-dev #Descripcion: Coleccion de librerias para habilitar comunicaciones vía CURL con SSL.
 
 #
 # Repositorios
@@ -17,6 +22,7 @@ cd temp
 #
 # Aplicaciones
 #
+apt-get update
 [%=generarApps(script.aplicaciones)%]
 
 #
@@ -48,7 +54,7 @@ chmod 777 -R mono
 bundle install
 
 cd ~/
-rm -rf temp
+rm -rf temporal
 
 echo "=================================="
 echo "Proceso de instalación ha finalizado"
@@ -70,16 +76,18 @@ operation generarRepos(repositorios:Set): String{
 
 	var lineas:String;	
 	for(repo in repositorios){
-		switch(repo.gestor){
-			case "ppa" : lineas = lineas + 'add-apt-repository -y '+repo.aplicacion;
-			case "apt-source" : lineas = lineas + "echo "+repo.aplicacion+" >> /etc/apt/source.list";
-			case "apt-key" : lineas = lineas + 'apt-ket add '+repo.aplicacion;
-			case "wget" : lineas = lineas + 'wget -t 0 -c '+repo.aplicacion;
-			case "curl" : lineas = lineas + 'curl -L '+repo.aplicacion + '| bash -s stable';
-			default : lineas = lineas + '# add-apt-repository -y '+repo.aplicacion; 
+		if(not repo.aplicacion.toLowerCase().contains("rpm")){
+			switch(repo.gestor){
+				case "ppa" : lineas = lineas + 'add-apt-repository -y '+repo.aplicacion;
+				case "apt-source" : lineas = lineas + "echo "+repo.aplicacion+" >> /etc/apt/source.list";
+				case "apt-key" : lineas = lineas + 'apt-ket add '+repo.aplicacion;
+				case "wget" : lineas = lineas + 'wget -t 0 -c '+repo.aplicacion;
+				case "curl" : lineas = lineas + 'curl -L '+repo.aplicacion + '| bash -s stable';
+				default : lineas = lineas + '# add-apt-repository -y '+repo.aplicacion; 
+			}
+			lineas = lineas +" #"+repo.descripcion;
+			lineas = lineas + "\n";
 		}
-		lineas = lineas +" #"+repo.descripcion;
-		lineas = lineas + "\n";
 	}	
 	return lineas;
 }
@@ -98,7 +106,13 @@ operation generarApps(apps:Set): String{
 		   }
 		}
 		else{
-			lineas = lineas + 'apt-get install -y '+app.aplicacion;
+			if(app.aplicacion == "openjdk7"){
+				lineas = lineas + 'apt-get install -y openjdk-7-*';
+			}
+			else{
+				lineas = lineas + 'apt-get install -y '+app.aplicacion;
+			}
+			
 		}	
 		lineas = lineas +" #"+app.descripcion;
 		lineas = lineas + "\n";

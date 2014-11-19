@@ -4,9 +4,14 @@ var script:Script = Script.allInstances().get(0);
 # Proyecto Gesco
 # Descripcion: [%=script.descripcion%]
 
+#
+# Preparación de Espacio de Trabajo
+#
 cd ~/
-mkdir temp
-cd temp
+mkdir temporal
+cd temporal
+yum -y install curl
+
 
 #
 # Repositorios
@@ -14,10 +19,14 @@ cd temp
 [%=generarRepos(script.repositorios)%]
 
 
+
 #
 # Aplicaciones
 #
+yum list
+yum groupinstall 'Development Tools'
 [%=generarApps(script.aplicaciones)%]
+
 
 #
 #Configuración e instalación de Mono
@@ -48,7 +57,7 @@ chmod 777 -R mono
 bundle install
 
 cd ~/
-rm -rf temp
+rm -rf temporal
 
 echo "=================================="
 echo "Proceso de instalación ha finalizado"
@@ -70,16 +79,19 @@ operation generarRepos(repositorios:Set): String{
 
 	var lineas:String;	
 	for(repo in repositorios){
-		switch(repo.gestor){
-			case "ppa" : lineas = lineas + 'add-apt-repository -y '+repo.aplicacion;
-			case "apt-source" : lineas = lineas + "echo "+repo.aplicacion+" >> /etc/apt/source.list";
-			case "apt-key" : lineas = lineas + 'apt-ket add '+repo.aplicacion;
-			case "wget" : lineas = lineas + 'wget -t 0 -c '+repo.aplicacion;
-			case "curl" : lineas = lineas + 'curl -L '+repo.aplicacion + '| bash -s stable';
-			default : lineas = lineas + '# add-apt-repository -y '+repo.aplicacion; 
+		if(repo.gestor <> "ppa" and not repo.gestor.contains("apt")){
+			switch(repo.gestor){
+				case "rpm-import" : lineas = lineas + 'rpm --import '+repo.aplicacion;
+				case "rpm-import-install" : lineas = lineas + 'rpm -ivh '+repo.aplicacion;
+				case "rpm-k" : lineas = lineas + 'rpm -K '+repo.aplicacion;
+				case "rpm-i" : lineas = lineas + 'rpm -i '+repo.aplicacion;
+				case "wget" : lineas = lineas + 'wget -t 0 -c '+repo.aplicacion;
+				case "curl" : lineas = lineas + 'curl -sL '+repo.aplicacion + '| bash -';
+				default : lineas = lineas + '# add-apt-repository -y '+repo.aplicacion; 
+			}
+			lineas = lineas +" #"+repo.descripcion;
+			lineas = lineas + "\n";
 		}
-		lineas = lineas +" #"+repo.descripcion;
-		lineas = lineas + "\n";
 	}	
 	return lineas;
 }
@@ -88,17 +100,26 @@ operation generarApps(apps:Set): String{
 
 	var lineas:String;	
 	for(app in apps){
-		if(app.gestor <> "Default"){
-			
-			if(app.gestor == "ppa"){
-				lineas = lineas + 'apt-get install -y '+app.aplicacion;
-		    }
-		   else{
-		   		lineas = lineas + '#Error. No es posible procesar esta dependencia '+app.aplicacion;
-		   }
+		if(app.aplicacion <> "build-essential" and app.aplicacion <> "gpac" and not app.aplicacion.contains("sqlite") and app.aplicacion <> "python-software-properties" and app.aplicacion <> "libmysqlclient-dev"){
+			switch(app.aplicacion){
+				case "openjdk7" : lineas = lineas +  'yum -y install java-1.7.0-openjdk';
+				case "tomcat7" : lineas = lineas + 'cd ~/temporal && mv apache-tomcat-7.0.57.tar.gz tomcat7.tar.gz && mv tomcat7.tar.gz /opt/ && cd /opt && tar -xzvf tomcat7.tar.gz && echo "#!/bin/bash" > /etc/profile.d/tomcat.sh && echo "CATALINA_HOME=/opt/tomcat7" > /etc/profile.d/tomcat.sh && echo "PATH=$CATALINA_HOME/bin:$PATH" > /etc/profile.d/tomcat.sh && echo "export PATH CATALINA_HOME" > /etc/profile.d/tomcat.sh && echo "export CLASSPATH=." > /etc/profile.d/tomcat.sh && chmod +x /etc/profile/tomcat.sh && chmod +x $CATALINA_HOME/bin/startup.sh &&  chmod +x $CATALINA_HOME/bin/shutdown.sh && chmod +x $CATALINA_HOME/bin/catalina.sn';
+				case "libyaml-dev" : lineas  = lineas + "cd ~/temporal && mv yaml-0.1.4.tar.gz libyaml.tar.gz && mv libyaml.tar.gz /opt/ && cd /opt && tar -xzvf libyaml.tar.gz && cd libyaml && ./configure --prefix=/usr/local &&  make && make install";
+				case "lamp-server^" : lineas = lineas + "yum -y install httpd && yum -y install mysql-server && yum -y install php php-mysql && yum -y install gcc php-devel php-pear";
+				case "rabbitmq-server" : lineas = lineas +  'chmod 777 -R rabbitmq-server-3.4.1-1.noarch.rp'+"\n"+'rpm -Uvh rabbitmq-server-3.4.1-1.noarch.rpm';
+				case "libimage-exiftool-perl" : lineas = lineas + "yum -y install perl-Image-ExifTool";
+				case "zlib1g-dev" : lineas = lineas + "yum -y install zlib-devel";
+				case "libssl-dev" : lineas = lineas + "yum -y install openssl-devel";
+				case "libreadline-dev" : lineas = lineas + "yum -y install readline-devel";
+				case "libxml2-dev" : lineas = lineas + "yum -y install libxml2";
+				case "libxslt1-dev" : lineas = lineas + "yum -y install libxslt";
+				default : lineas = lineas + 'yum -y install '+app.aplicacion;
+			}
 		}
 		else{
-			lineas = lineas + 'apt-get install -y '+app.aplicacion;
+			if(app.aplicacion.contains("sqlite") and not lineas.contains("sqlite-devel")){
+				lineas = lineas + 'yum -y install sqlite-devel';
+			}	
 		}	
 		lineas = lineas +" #"+app.descripcion;
 		lineas = lineas + "\n";
