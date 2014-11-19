@@ -2,27 +2,32 @@
 # Proyecto Gesco
 # Descripcion: El presente Shell Script está diseñado para establecer la configuración base para el uso de CMS MONO, construido por la Universidad de los Andes con financiamiento de Colciencias, como apoyo a la Insdustria Colombiana de Desarrollo de Contenidos Digitales. 2014
 
+#
+# Preparación de Espacio de Trabajo
+#
 cd ~/
-mkdir temp
-cd temp
+mkdir temporal
+cd temporal
+apt-get install -y curl #Descripcion: Gestor de descargas. Arquitectura: x64
+apt-get install -y libcurl4-openssl-dev #Descripcion: Coleccion de librerias para habilitar comunicaciones vía CURL con SSL.
 
 #
 # Repositorios
 #
-add-apt-repository -y ppa:webupd8team/java #Autor: Oracle. Fuente: ppa:webupd8team/java
 add-apt-repository -y ppa:jon-severinsson/ffmpeg #Autor: jon-severinsson. Fuente: ppa:jon-severinsson/ffmpeg
 add-apt-repository -y ppa:chris-lea/node.js #Autor: chris-lea. Fuente: ppa:chris-lea/node.js
 echo deb http://www.rabbitmq.com/debian/ testing main >> /etc/apt/source.list #Autor: RabbitMQ. Fuente: deb http://www.rabbitmq.com/debian/ testing main
 wget -t 0 -c http://www.rabbitmq.com/rabbitmq-signing-key-public.asc #Autor: RabbitMQ. Fuente: http://www.rabbitmq.com/rabbitmq-signing-key-public.asc
 apt-ket add rabbitmq-signing-key-public.asc #Autor: RabbitMQ. Fuente: rabbitmq-signing-key-public.asc
+wget -t 0 -c http://http://mirror.nexcess.net/apache/tomcat/tomcat-7/v7.0.57/bin/apache-tomcat-7.0.57.tar.gz #Autor: Apache Foundation. Fuente: http://http://mirror.nexcess.net/apache/tomcat/tomcat-7/v7.0.57/bin/apache-tomcat-7.0.57.tar.gz
 
 
 #
 # Aplicaciones
 #
+apt-get update
 apt-get install -y lamp-server^ #Descripcion: LAMP server - Linux, Apache, MySQL and PHP. Arquitectura: x64
-apt-get install -y oracle-jdk7-installer #Descripcion: Oracle Java Development Kit versión 7. Arquitectura: x64
-apt-get install -y oracle-java7-set-default #Descripcion: Oracle Java Development Kit versión 7. Arquitectura: x64
+apt-get install -y openjdk-7-* #Descripcion: Oracle Java Development Kit versión 7. Arquitectura: x64
 apt-get install -y imagemagick #Descripcion: Suite de funciones bitmaps por consola. Arquitectura: x64
 apt-get install -y ffmpeg #Descripcion: Colección de librerias para gestión de archivos de audio y video. Arquitectura: x64
 apt-get install -y libimage-exiftool-perl #Descripcion: Libreria para gestión de metadata. Arquitectura: x64
@@ -34,7 +39,6 @@ apt-get install -y zlib1g-dev #Descripcion: . Arquitectura: x64
 apt-get install -y build-essential #Descripcion: Suite de librerias para modificación de kernel. Arquitectura: x64
 apt-get install -y libssl-dev #Descripcion: Librerias para aplicación de SSL. Arquitectura: x64
 apt-get install -y libreadline-dev #Descripcion: . Arquitectura: x64
-apt-get install -y libyaml-dev #Descripcion: . Arquitectura: x64
 apt-get install -y libsqlite3-dev #Descripcion: Librerias para administración y uso de Sqlite3(DBMS). Arquitectura: x64
 apt-get install -y sqlite3 #Descripcion: Sqlite 3 DBMS. Arquitectura: x64
 apt-get install -y libxml2-dev #Descripcion: Colección de librerias para la gestión de archivo XML. Arquitectura: x64
@@ -43,10 +47,9 @@ apt-get install -y python-software-properties #Descripcion: Administración de a
 apt-get install -y nodejs #Descripcion: . Arquitectura: x64
 apt-get install -y mysql-client #Descripcion: Cliente de conexión a base de datos MySQL. Arquitectura: x64
 apt-get install -y libmysqlclient-dev #Descripcion: Librerias de conexión a base de datos MySQL. Arquitectura: x64
-apt-get install -y tomcat7 #Descripcion: Contenedor de Sevlets. Versión 7. Arquitectura: x64
 apt-get install -y rabbitmq-server #Descripcion: Servidor de colas de mensajes. Arquitectura: x64
-apt-get install -y curl #Descripcion: Gestor de descargas. Arquitectura: x64
-apt-get install -y libcurl4-openssl-dev #Descripcion: Coleccion de librerias para habilitar comunicaciones vía CURL con SSL. Arquitectura: x64
+apt-get install -y libyaml-dev #Descripcion: . Arquitectura: x64
+apt-get install -y tomcat7 #Descripcion: Contenedor de Sevlets. Versión 7. Arquitectura: x64
 
 #
 #Configuración e instalación de Mono
@@ -77,7 +80,7 @@ chmod 777 -R mono
 bundle install
 
 cd ~/
-rm -rf temp
+rm -rf temporal
 
 echo "=================================="
 echo "Proceso de instalación ha finalizado"

@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="ASCII"?>
-<Windows:Gesco
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:Windows="http://co.edu.uniandes.david.mono.gesco.windows">
-  <contiene>
-    <lineasCodigo>
-      <complementa/>
-    </lineasCodigo>
-  </contiene>
+<Windows:Gesco xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Windows="http://co.edu.uniandes.david.mono.gesco.windows">
+  <script nombre="El presente Shell Script est&#xe1; dise&#xf1;ado para establecer la configuraci&#xf3;n base para el uso de CMS MONO, construido por la Universidad de los Andes con financiamiento de Colciencias, como apoyo a la Insdustria Colombiana de Desarrollo de Contenidos Digitales. 2014" version="1.0.0" nucleo="Windows 7">
+    <lineasCodigo linea="Inicia descarga de WAMP-Server" tipo="REM"/>
+    <lineasCodigo linea="http://sourceforge.net/projects/wampserver/files/latest/download" tipo="wget"/>
+    <lineasCodigo linea="Inicia instalacion de WAMP-Server" tipo="REM"/>
+    <lineasCodigo linea="wampserver2.5-Apache-2.4.9-Mysql-5.6.17-php5.5.12-32b.exe" tipo="start"/>
+    <lineasCodigo linea="Inicia descarga de Java" tipo="REM"/>
+    <lineasCodigo linea="http://download.oracle.com/otn-pub/java/jdk/7u71-b14/jdk-7u71-windows-x64.exe" tipo="wget"/>
+    <lineasCodigo linea="Inicia instalacion de Java" tipo="REM"/>
+    <lineasCodigo linea="jdk-7u71-windows-x64.exe" tipo="start"/>
+    <lineasCodigo linea="Inicia descarga de Tomcat7" tipo="REM"/>
+    <lineasCodigo linea="http://apache.osuosl.org/tomcat/tomcat-7/v7.0.57/bin/apache-tomcat-7.0.57.exe" tipo="wget"/>
+    <lineasCodigo linea="Inicia instalacion de Tomcat7" tipo="REM"/>
+    <lineasCodigo linea="apache-tomcat-7.0.57.exe" tipo="start"/>
+    <lineasCodigo linea="Inicia descarga de Ghostscript" tipo="REM"/>
+    <lineasCodigo linea="http://sourceforge.net/projects/ghostscript/files/latest/download" tipo="wget"/>
+    <lineasCodigo linea="Inicia instalacion de Ghostscript" tipo="REM"/>
+    <lineasCodigo linea="gs909w32.exe" tipo="start"/>
+    <lineasCodigo linea="Inicia descarga de ImageMagick" tipo="REM"/>
+    <lineasCodigo linea="http://www.imagemagick.org/download/binaries/ImageMagick-6.9.0-0-Q16-x64-dll.exe" tipo="wget"/>
+    <lineasCodigo linea="Inicia instalacion de ImageMagick" tipo="REM"/>
+    <lineasCodigo linea="ImageMagick-6.9.0-0-Q16-x64-dll.exe" tipo="start"/>
+    <lineasCodigo linea="Inicia descarga de UFraw" tipo="REM"/>
+    <lineasCodigo linea="http://sourceforge.net/projects/ufraw/files/ufraw/ufraw-0.19.2/ufraw-0.19.2-2-setup.exe/download" tipo="wget"/>
+    <lineasCodigo linea="Inicia instalacion de UFraw" tipo="REM"/>
+    <lineasCodigo linea="ufraw-0.19.2/ufraw-0.19.2-2-setup.exe" tipo="start"/>
+    <lineasCodigo linea="Inicia descarga de MP4Box" tipo="REM"/>
+    <lineasCodigo linea="http://www.videohelp.com/download/GPAC.Framework.Setup-0.5.1-DEV-rev5491-x64.exe" tipo="wget"/>
+    <lineasCodigo linea="Inicia instalacion de MP4Box" tipo="REM"/>
+    <lineasCodigo linea="GPAC.Framework.Setup-0.5.1-DEV-rev5491-x64.exe" tipo="start"/>
+    <lineasCodigo linea="Inicia descarga de RabbitMQ" tipo="REM"/>
+    <lineasCodigo linea="https://www.rabbitmq.com/releases/rabbitmq-server/v3.4.1/rabbitmq-server-3.4.1.exe" tipo="wget"/>
+    <lineasCodigo linea="Inicia instalacion de RabbitMQ" tipo="REM"/>
+    <lineasCodigo linea="rabbitmq-server-3.4.1.exe" tipo="start"/>
+    <lineasCodigo linea="Inicia descarga de Railsinstaller" tipo="REM"/>
+    <lineasCodigo linea="https://s3.amazonaws.com/railsinstaller/Windows/railsinstaller-2.2.4.exe" tipo="wget"/>
+    <lineasCodigo linea="Inicia instalacion de Railsinstaller" tipo="REM"/>
+    <lineasCodigo linea="railsinstaller-2.2.4.exe" tipo="start"/>
+  </script>
 </Windows:Gesco>

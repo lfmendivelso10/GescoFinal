@@ -7,147 +7,62 @@ post{
 
 rule Requerimientos2Windows
 transform RequerimientoM : RequerimientosMM!Configuracion
-to Windows : WindowsMM!Gesco
+to windows : WindowsMM!Gesco
 {	
 	
 	RequerimientoM.sistemaOperativo.println();
-	Windows.script = RequerimientoM.getWindowsMModel();	
+	windows.script = RequerimientoM.getWindowsModel();	
 	
 }
 
 //Obtiene el modelo general de la transformación.
-operation RequerimientosMM!Configuracion getLinuxMModel() : LinuxMM!Script{
+operation RequerimientosMM!Configuracion getWindowsModel() : WindowsMM!Caracteristicas{
 	
-	var linux : new LinuxMM!Script;
+	var windows : new WindowsMM!Caracteristicas;
 	var so : RequerimientosMM!SistemaOperativo;
 	
 	for(sos : RequerimientosMM!SistemaOperativo in self.sistemaOperativo){
-		if(sos.name == "Linux"){
+		if(sos.name == "Windows"){
 			so = sos;
 		}
 	}
 	
-	linux.version = so.version;
-	linux.descripcion = so.descripcion;
-	//linux.arquitectura = so.arquitectura;
-	linux.repositorios = so.getLineasRepositorio();
-	linux.aplicaciones = so.getLineasAplicaciones();
+	windows.version = so.version;
+	windows.nombre = so.descripcion;
+	windows.nucleo = "Windows 7";
+	var lineas : OrderedSet;
+	var total : Integer = so.fuentes.size();
+	var carry : Integer = 0;
+	while(carry < total){
 	
-	return linux;
-}
-
-//Obtiene las lineas de comando requeridas para los repositorio
-operation RequerimientosMM!SistemaOperativo getLineasRepositorio() : Set{
-	
-	var lnRepositorio : OrderedSet;
-	
-	for(f : RequerimientosMM!Fuentes in self.fuentes){
+		var software : RequerimientosMM!Software = so.requerimientos.get(carry);
+		var fuente : RequerimientosMM!Fuentes = so.fuentes.get(carry);
 		
-		var linea : new LinuxMM!LineaComando;
+		var cDescarga : new WindowsMM!Instruccion;
+		cDescarga.linea="Inicia descarga de "+fuente.name;
+		cDescarga.tipo=WindowsMM!TipoInstruccion#REM;
 		
-		linea.id = f.name;
-		linea.descripcion = "Autor: " + f.autor + ". Fuente: " + f.fuente;
-		linea.rutaDestino = "";
-		linea.gestor = f.tipoFuente;
-		linea.aplicacion = f.fuente;
+		var descarga : new WindowsMM!Instruccion;
+		descarga.linea=fuente.fuente;
+		descarga.tipo=WindowsMM!TipoInstruccion#wget;
 		
-		lnRepositorio.add(linea);
+		var cInstalacion : new WindowsMM!Instruccion;
+		cInstalacion.linea="Inicia instalacion de "+fuente.name;
+		cInstalacion.tipo=WindowsMM!TipoInstruccion#REM;
+		
+		var instalacion : new WindowsMM!Instruccion;
+		instalacion.linea=software.name;
+		instalacion.tipo=WindowsMM!TipoInstruccion#start;
+		
+		lineas.add(cDescarga);
+		lineas.add(descarga);
+		lineas.add(cInstalacion);
+		lineas.add(instalacion);
+		
+		carry=carry+1;	
 	}
 	
-	return lnRepositorio;
-}
-
-
-//Genera la lista de linea de comando, para la instalación de las distintas aplicaciones
-
-operation RequerimientosMM!SistemaOperativo getLineasAplicaciones() : Set{
-
-	var base : Set = self.requerimientos;
-	var lnApps : OrderedSet;
-	var log : OrderedSet;
-	var cola : OrderedSet;
-	var completado : Boolean = false;
+	windows.lineasCodigo=lineas;
 	
-	for(s : RequerimientosMM!Software in base){
-		
-		if(s.dependencia.isEmpty()){
-			lnApps.add(crearLinea(s));
-			log.add(s);
-		}
-		else{
-			var aCola : Boolean = false;
-			for(d : RequerimientosMM!Software in s.dependencia){
-				if(log.includes(d) == false){
-					aCola=true;
-				}
-			}
-			if(aCola){
-				cola.add(s);
-			}
-			else{
-				lnApps.add(crearLinea(s));
-				log.add(s);
-			}
-		}
-	}
-	
-	while(completado){
-		
-		var cola2 : Set;
-		
-		for(s : RequerimientosMM!Software in cola){
-		
-			var aCola : Boolean = false;
-			for(d : RequerimientosMM!Software in s.dependencia){
-				if(log.includes(d) == false){
-					aCola=true;
-				}
-			}
-			if(aCola){
-				cola2.add(s);
-			}
-			else{
-				lnApps.add(crearLinea(s));
-				log.add(s);
-			}
-		}	
-		if(cola2.isEmpty()){
-			completado=true;
-		}
-		else{
-			cola = cola2;
-		}
-	}
-
-	return lnApps;
-}
-
-//Crea una linea de Comando con base a un requerimiento de software.
-operation crearLinea(software : RequerimientosMM!Software) : LinuxMM!LineaComando{
-	var linea : new LinuxMM!LineaComando;
-	var parametros : Set;
-	linea.parametros = parametros;
-		
-	linea.id = software.name;
-	linea.descripcion = "Descripcion: " + software.descripcion;
-		
-	if(software.version <> null){
-		linea.descripcion = linea.descripcion + ". Version: " + software.version;
-		var parametro : new LinuxMM!Parametro;
-		parametro.nombre = "version";
-		parametro.valor = software.version;
-		linea.parametros.add(parametro);
-	}
-	if(software.origen.isEmpty() <> true){
-		var f : RequerimientosMM!Fuentes = software.origen.first();
-		linea.gestor = f.tipoFuente;
-	}
-	else{
-		linea.gestor = "Default";
-	}
-	linea.descripcion = linea.descripcion + ". Arquitectura: " + software.arquitectura;
-	linea.rutaDestino = software.rutaDestino;
-	linea.aplicacion = software.name;
-	
-	return linea;
+	return windows;
 }

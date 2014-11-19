@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Windows" nsURI="http://co.edu.uniandes.david.mono.gesco.windows"
     nsPrefix="Windows">
   <eClassifiers xsi:type="ecore:EClass" name="Gesco">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contiene" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="script" lowerBound="1"
         eType="#//Caracteristicas" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Caracteristicas">
@@ -28,7 +28,9 @@
     <eLiterals name="x64" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TipoInstruccion">
-    <eLiterals name="bat"/>
+    <eLiterals name="echo"/>
     <eLiterals name="wget" value="1"/>
+    <eLiterals name="start"/>
+    <eLiterals name="REM"/>
   </eClassifiers>
 </ecore:EPackage>

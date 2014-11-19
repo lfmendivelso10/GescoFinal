@@ -9,7 +9,7 @@
   <metamodels name="WindowsMM" alias="WindowsMM" metamodelURI="http://co.edu.uniandes.david.mono.gesco.windows"/>
   <models name="Requerimientos" URI="app.xmi" metamodels="//@metamodels.0"/>
   <models name="LinuxM" URI="LinuxM.xmi" metamodels="//@metamodels.1"/>
-  <models name="WindowsM" URI="" metamodels="//@metamodels.2"/>
+  <models name="WindowsM" URI="WindowsM.xmi" metamodels="//@metamodels.2"/>
   <inputModels model="//@models.0" modelAlias="RequerimientosMM" transformation="//@transformations.0" metamodelAlias="RequerimientosMM"/>
   <inputModels model="//@models.1" modelAlias="LinuxM" transformation="//@transformations.1"/>
   <inputModels model="//@models.1" modelAlias="LinuxM" transformation="//@transformations.3"/>

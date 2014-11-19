@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="ASCII"?>
 <Gesco:Configuracion xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Gesco="http://co.edu.uniandes.david.mono.gesco.requerimientos">
   <sistemaOperativo name="Linux" version="1.0.0" descripcion="El presente Shell Script est&#xe1; dise&#xf1;ado para establecer la configuraci&#xf3;n base para el uso de CMS MONO, construido por la Universidad de los Andes con financiamiento de Colciencias, como apoyo a la Insdustria Colombiana de Desarrollo de Contenidos Digitales. 2014">
-    <fuentes name="Java" autor="Oracle" fuente="ppa:webupd8team/java" tipoFuente="ppa"/>
     <fuentes name="ffmpeg.repo" autor="jon-severinsson" fuente="ppa:jon-severinsson/ffmpeg" tipoFuente="ppa"/>
     <fuentes name="node.js" autor="chris-lea" fuente="ppa:chris-lea/node.js" tipoFuente="ppa"/>
     <fuentes name="rabbitmq-source" autor="RabbitMQ" fuente="deb http://www.rabbitmq.com/debian/ testing main" tipoFuente="apt-source"/>
     <fuentes name="rabbitmq-key-file" autor="RabbitMQ" fuente="http://www.rabbitmq.com/rabbitmq-signing-key-public.asc" tipoFuente="wget"/>
     <fuentes name="rabbitmq-key-installer" autor="RabbitMQ" fuente="rabbitmq-signing-key-public.asc" tipoFuente="apt-key"/>
+    <fuentes name="rpmforge" autor="Forge.org" fuente="http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.i686.rpm" tipoFuente="wget"/>
+    <fuentes name="rabbitmq-rpm" autor="RabbitMQ" fuente="http://www.rabbitmq.com/releases/rabbitmq-server/v3.4.1/rabbitmq-server-3.4.1-1.noarch.rpm" tipoFuente="wget"/>
+    <fuentes name="tomcat7-source" autor="Apache Foundation" fuente="http://http://mirror.nexcess.net/apache/tomcat/tomcat-7/v7.0.57/bin/apache-tomcat-7.0.57.tar.gz" tipoFuente="wget"/>
+    <fuentes name="pyYaml" autor="pyYaml" fuente="http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.i686.rpm" tipoFuente="wget"/>
+    <fuentes name="rpmforge-key" autor="Forge.org" fuente="http://apt.sw.be/RPM-GPG-KEY.dag.txt" tipoFuente="rpm-import"/>
+    <fuentes name="epel-repo" autor="epel" fuente="http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm" tipoFuente="rpm-import-install"/>
+    <fuentes name="rpmforge-config" autor="Forge.org" fuente="rpmforge-release-0.5.3-1.el6.rf.i686.rpm " tipoFuente="rpm-k"/>
+    <fuentes name="rpmforge-installer" autor="Forge.org" fuente="rpmforge-release-0.5.3-1.el6.rf.i686.rpm " tipoFuente="rpm-i"/>
+    <fuentes name="nodejs-rpm" autor="nodesource" fuente="https://rpm.nodesource.com/setup" tipoFuente="curl"/>
     <requerimientos name="lamp-server^" descripcion="LAMP server - Linux, Apache, MySQL and PHP"/>
-    <requerimientos name="oracle-jdk7-installer" descripcion="Oracle Java Development Kit versi&#xf3;n 7" origen="Java"/>
-    <requerimientos name="oracle-java7-set-default" descripcion="Oracle Java Development Kit versi&#xf3;n 7" origen="Java"/>
+    <requerimientos name="openjdk7" descripcion="Oracle Java Development Kit versi&#xf3;n 7"/>
     <requerimientos name="imagemagick" descripcion="Suite de funciones bitmaps por consola"/>
     <requerimientos name="ffmpeg" descripcion="Colecci&#xf3;n de librerias para gesti&#xf3;n de archivos de audio y video"/>
     <requerimientos name="libimage-exiftool-perl" descripcion="Libreria para gesti&#xf3;n de metadata"/>
@@ -21,7 +28,6 @@
     <requerimientos name="build-essential" descripcion="Suite de librerias para modificaci&#xf3;n de kernel"/>
     <requerimientos name="libssl-dev" descripcion="Librerias para aplicaci&#xf3;n de SSL"/>
     <requerimientos name="libreadline-dev" descripcion=""/>
-    <requerimientos name="libyaml-dev" descripcion=""/>
     <requerimientos name="libsqlite3-dev" descripcion="Librerias para administraci&#xf3;n y uso de Sqlite3(DBMS)"/>
     <requerimientos name="sqlite3" descripcion="Sqlite 3 DBMS"/>
     <requerimientos name="libxml2-dev" descripcion="Colecci&#xf3;n de librerias para la gesti&#xf3;n de archivo XML"/>
@@ -30,13 +36,28 @@
     <requerimientos name="nodejs" descripcion=""/>
     <requerimientos name="mysql-client" descripcion="Cliente de conexi&#xf3;n a base de datos MySQL"/>
     <requerimientos name="libmysqlclient-dev" descripcion="Librerias de conexi&#xf3;n a base de datos MySQL"/>
-    <requerimientos name="tomcat7" descripcion="Contenedor de Sevlets. Versi&#xf3;n 7"/>
     <requerimientos name="rabbitmq-server" descripcion="Servidor de colas de mensajes"/>
-    <requerimientos name="curl" descripcion="Gestor de descargas"/>
-    <requerimientos name="libcurl4-openssl-dev" descripcion="Coleccion de librerias para habilitar comunicaciones v&#xed;a CURL con SSL"/>
+    <requerimientos name="libyaml-dev" descripcion=""/>
+    <requerimientos name="tomcat7" descripcion="Contenedor de Sevlets. Versi&#xf3;n 7"/>
   </sistemaOperativo>
   <sistemaOperativo name="Windows" version="1.0.0" descripcion="El presente Shell Script est&#xe1; dise&#xf1;ado para establecer la configuraci&#xf3;n base para el uso de CMS MONO, construido por la Universidad de los Andes con financiamiento de Colciencias, como apoyo a la Insdustria Colombiana de Desarrollo de Contenidos Digitales. 2014">
-    <fuentes name="JDK" autor="Oracle" fuente="http://download.oracle.com/otn-pub/java/jdk/7u71-b14/jdk-7u71-windows-x64.exe" tipoFuente="wget"/>
-    <requerimientos name="jdk" descripcion="Java SE Development Kit version 7" origen="JDK"/>
+    <fuentes name="WAMP-Server" autor="Romain Bourdon" fuente="http://sourceforge.net/projects/wampserver/files/latest/download" tipoFuente="wget"/>
+    <fuentes name="Java" autor="Oracle" fuente="http://download.oracle.com/otn-pub/java/jdk/7u71-b14/jdk-7u71-windows-x64.exe" tipoFuente="wget"/>
+    <fuentes name="Tomcat7" autor="Apache" fuente="http://apache.osuosl.org/tomcat/tomcat-7/v7.0.57/bin/apache-tomcat-7.0.57.exe" tipoFuente="wget"/>
+    <fuentes name="Ghostscript" autor="Artifex Software" fuente="http://sourceforge.net/projects/ghostscript/files/latest/download" tipoFuente="wget"/>
+    <fuentes name="ImageMagick" autor="ImageMagick Studio LLC" fuente="http://www.imagemagick.org/download/binaries/ImageMagick-6.9.0-0-Q16-x64-dll.exe" tipoFuente="wget"/>
+    <fuentes name="UFraw" autor="Udi Fuchs" fuente="http://sourceforge.net/projects/ufraw/files/ufraw/ufraw-0.19.2/ufraw-0.19.2-2-setup.exe/download" tipoFuente="wget"/>
+    <fuentes name="MP4Box" autor="Multimedia Open Source Project" fuente="http://www.videohelp.com/download/GPAC.Framework.Setup-0.5.1-DEV-rev5491-x64.exe" tipoFuente="wget"/>
+    <fuentes name="RabbitMQ" autor="Pivotal" fuente="https://www.rabbitmq.com/releases/rabbitmq-server/v3.4.1/rabbitmq-server-3.4.1.exe" tipoFuente="wget"/>
+    <fuentes name="Railsinstaller" autor="Engine Yard" fuente="https://s3.amazonaws.com/railsinstaller/Windows/railsinstaller-2.2.4.exe" tipoFuente="wget"/>
+    <requerimientos name="wampserver2.5-Apache-2.4.9-Mysql-5.6.17-php5.5.12-32b.exe" descripcion="WAMP server - Windows, Apache, MySQL and PHP"/>
+    <requerimientos name="jdk-7u71-windows-x64.exe" descripcion="Java SE Development Kit version 7"/>
+    <requerimientos name="apache-tomcat-7.0.57.exe" descripcion="Contenedor de Sevlets. Versi&#xf3;n 7"/>
+    <requerimientos name="gs909w32.exe" descripcion="interprete para el lenguaje PostScript y para PDF"/>
+    <requerimientos name="ImageMagick-6.9.0-0-Q16-x64-dll.exe" descripcion="is a software suite to create, edit, compose, or convert bitmap images"/>
+    <requerimientos name="ufraw-0.19.2/ufraw-0.19.2-2-setup.exe" descripcion="The Unidentified Flying Raw (UFRaw) is a utility to read and manipulate raw images from digital cameras."/>
+    <requerimientos name="GPAC.Framework.Setup-0.5.1-DEV-rev5491-x64.exe" descripcion="Conversor MPEG-4. Puede importar v&#xed;deo MPEG-4 (DivX/ Xvid/ 3ivx/ ffmpeg) y flujos de audio hacia un contenedor *.mp4."/>
+    <requerimientos name="rabbitmq-server-3.4.1.exe" descripcion="Servidor de colas de mensajes"/>
+    <requerimientos name="railsinstaller-2.2.4.exe" descripcion="Suite de instalaci&#xf3;n de Ruby on Rails"/>
   </sistemaOperativo>
 </Gesco:Configuracion>
